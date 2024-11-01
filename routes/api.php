@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,14 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/* Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-Route::post('product/store' , [ProductController::class , 'store']);*/
+/*Route::get('project/hello',[\App\Http\Controllers\AdminController::class,'SayHello']);
+Route::post('admin/store' , [\App\Http\Controllers\AdminController::class,'store']);
 
-Route::post('article/store',[\App\Http\Requests\storeArticlerequest::class,'storeArticle']);
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});*/
+
+Route::get('article/{article:id}/show',[\App\Http\Controllers\ArticleController::class,'show']);
+Route::get('article/list',[\App\Http\Controllers\ArticleController::class,'showList']);
+Route::post('article/store',[\App\Http\Controllers\ArticleController::class,'StoreArticle']);
+
 Route::middleware('auth:sanctum')->group( function () {
 
-    Route::resource('products', ProductController::class);
 
 });

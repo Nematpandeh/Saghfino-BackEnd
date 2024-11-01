@@ -6,19 +6,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Sanctum\HasApiTokens;
 
-class Product extends Model
+class Article extends Model
 {
     use HasFactory,HasApiTokens;
 
     protected $fillable =
-    [
-        'name',
-        'title',
-        'caption',
-        'time_start',
-        'slug',
-        'price',
-        'description',
-    ];
+        [
+            'title',
+            'slug',
+            'caption',
+            'author',
+            'time_study',
+            'url_picture'
+        ];
 
 }
