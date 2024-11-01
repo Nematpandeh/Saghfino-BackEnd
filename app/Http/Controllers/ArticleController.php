@@ -22,7 +22,7 @@ class ArticleController extends Controller
             ]);
         }
         return response()->json([
-            "message" => "مقاله با موفقیت در سامانه درج گردید",
+            "message" => "اطلاعات املاک در سامانه درج گردید",
             "data" => new ArticleResource($article)
         ],200);
     }
@@ -34,14 +34,14 @@ class ArticleController extends Controller
         {
             return response()->json(
                 [
-                    'message' => "مقاله موردنظر یافت نشد",
+                    'message' => "اطلاعات موردنظر یافت نشد",
                 ]
             ,404);
         }
         else
         {
             return response()->json([
-                "message" => "مقاله موردنظرپیدا شد",
+                "message" => "اطلاعاتموردنظرپیدا شد",
                 "data" => new ArticleResource($article)
             ]);
         }
@@ -55,14 +55,14 @@ class ArticleController extends Controller
         {
             return response()->json(
                 [
-                    'message' => "متاسفانه هنوز مقاله ای ایجاد نشده است",
+                    'message' => "متاسفانه هنوز اطلاعات ایجاد نشده است",
                 ]
                 ,404);
         }
         else
         {
             return response()->json([
-                "message" => "لیست مقالا با موفقیت دریافت شد",
+                "message" => "لیست اطلاعات با موفقیت دریافت شد",
                 "data" => ArticleResource::collection($articles)
             ]);
         }
